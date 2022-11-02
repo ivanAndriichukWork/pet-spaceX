@@ -1,12 +1,7 @@
-import * as React from "react"
-import {Header} from "../components/Header";
-import {Navigation} from "../components/Navigation";
-import {Body} from "../components/Body";
-import {useState} from "react";
-import {MenuList, BodyData, BodyRocketData, BodyMissionData, BodyShipData} from "../../types/types";
-import {MyGlobalContext} from '../../context'
-import {GlobalContext} from '../../context'
-import {Col, Row} from "../index";
+import React , {useState} from "react"
+import {MenuList, BodyRocketData, BodyMissionData, BodyShipData} from "../../types/types";
+import {MyGlobalContext, GlobalContext} from '../../context'
+import {Col, Row, Body ,Navigation, Header} from "../index";
 
 interface NavData {
     title: string,
@@ -42,7 +37,7 @@ export const Home = (props: any) => {
                 let mass_max: number = 0,
                     mass_min: number = 1000000,
                     mass_total: number = 0;
-                item!.payloads?.forEach((payload, index) => {
+                item!.payloads?.forEach((payload) => {
                     if (payload?.payload_mass_kg! > mass_max) {
                         mass_max = payload?.payload_mass_kg!
                     }

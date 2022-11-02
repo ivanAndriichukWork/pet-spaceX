@@ -8,6 +8,6 @@ interface LayoutProps {
 }
 
 export const Link = ({children, backType, href}: LayoutProps) => {
-    return <GatsbyLink className='text-cyan-600'
+    return <GatsbyLink className='text-[#2E85E5]'
                        to={backType ? `/` : href ? href : '#'}> {backType ? `← Back` : children}</GatsbyLink>
 }

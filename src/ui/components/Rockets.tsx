@@ -1,6 +1,5 @@
-import React, {useState} from "react";
-import {Row} from "../base/Row";
-import {Col} from "../base/Col";
+import React from "react";
+import {Row, Col} from "../index";
 import { BodyRocketData} from '../../types/types'
 import {WhaleIcon} from "../../images/icons/WhaleIcon";
 // @ts-ignore

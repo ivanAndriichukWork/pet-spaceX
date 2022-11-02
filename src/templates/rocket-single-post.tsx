@@ -1,6 +1,6 @@
 import * as React from "react";
 import {graphql} from "gatsby";
-import {Header, Layout , Title , InfoItem, Link} from "../ui";
+import {Title, InfoItem, Link, InfoWrapper} from "../ui";
 
 type Data = {
     data: {
@@ -21,21 +21,20 @@ type Data = {
 }
 
 
-const RocketSinglePost = ({ data }:Data) => {
-   const {
-       name,
-       active,
-       boosters,
-       company,
-       country,
-       cost_per_launch,
-       description,
-       first_flight,
-       wikipedia
-   } = data.spacex.rocket
+const RocketSinglePost = ({data}: Data) => {
+    const {
+        name,
+        active,
+        boosters,
+        company,
+        country,
+        cost_per_launch,
+        description,
+        first_flight,
+        wikipedia
+    } = data.spacex.rocket
     return (
-        <Layout>
-            <Header/>
+        <InfoWrapper>
             <Title size={'big'} isCenter={true}>{name}</Title>
             <InfoItem title={'First Flight'}>{first_flight}</InfoItem>
             <InfoItem title={'Active'}>{active ? 'Yes' : 'No'}</InfoItem>
@@ -45,9 +44,10 @@ const RocketSinglePost = ({ data }:Data) => {
             <InfoItem title={'Cost Per Launch'}>{cost_per_launch}</InfoItem>
             <InfoItem title={'Description'}>{description}</InfoItem>
             <InfoItem title={'wikipedia'}><Link href={wikipedia}>{name}</Link></InfoItem>
-            <Link backType={true} />
-        </Layout>
-)}
+            <Link backType={true}/>
+        </InfoWrapper>
+    )
+}
 
 export default RocketSinglePost
 

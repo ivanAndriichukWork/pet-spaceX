@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Title} from "../base/Title";
+import {Title} from "../index";
 import {MenuList} from "../../types/types";
 import {Link} from "gatsby";
 import {useGlobalContext , useGroup } from "../../context";
@@ -11,14 +11,10 @@ type Data = {
     thisGroup: string
 }
 
-export const MenuItem = ({title, values, thisGroup}: Data) => {
-    const { currentGroup, setCurrentGroup }=useGroup()
+export const MenuItem = ({title, values}: Data) => {
+    const { setCurrentGroup }=useGroup()
     const [isActive, setIsActive] = useState(false)
     const { setCurrentItem }=useGlobalContext()
-
-    // if (currentGroup && title && currentGroup !== title) {
-    //     setIsActive(false)
-    // }
 
     const svgFill = !isActive ? '#2E85E5' : '#fff'
 

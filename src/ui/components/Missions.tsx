@@ -1,7 +1,6 @@
 import React from "react";
 import {BodyMissionData} from '../../types/types'
-import {Row} from "../base/Row";
-import {Col} from "../base/Col";
+import {Row, Col} from "../index";
 
 interface LayoutProps {
     data: BodyMissionData[]

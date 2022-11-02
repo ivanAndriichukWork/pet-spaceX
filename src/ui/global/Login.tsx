@@ -1,11 +1,7 @@
-import * as React from "react"
-import {useState} from "react";
+import React, {useState} from "react"
 import auth from '../../api'
 import store from "../../redux/store";
-import {registration} from "../../api/rest/auth";
-import {Button} from "../base/Button";
-import {Input} from "../base/Input";
-import {Title} from "../base/Title";
+import {Title ,Input ,Button} from "../index";
 
 // markup
 export const Login = () => {
@@ -56,14 +52,14 @@ export const Login = () => {
 
                 <p
                     className='mt-8 mx-auto px-8 py-1 min-w-max'
-                >If you {isSignUp ? "haven't" : 'have'} acc <Button
-                    isMain={false}
-                    position={'left'}
+                >If you {isSignUp ? "haven't" : 'have'} acc <a
+                    className={'text-[blue] underline pointer'}
+                    href={'#'}
                     onClick={(event) => {
                         event.preventDefault()
                         setIsSignUp(!isSignUp)
                     }}
-                >sign {isSignUp ? 'up' : 'in'}!</Button></p>
+                >sign {isSignUp ? 'up' : 'in'}!</a></p>
             </form>
         </main>
     )

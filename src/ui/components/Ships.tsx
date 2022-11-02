@@ -1,8 +1,7 @@
 import React from "react";
-import {BodyMissionData, BodyShipData} from '../../types/types'
-import {Row} from "../base/Row";
-import {Col} from "../base/Col";
-import {WhaleIcon} from "../../images/icons/WhaleIcon";
+import {BodyShipData} from '../../types/types'
+import {Row} from "../index";
+
 
 interface LayoutProps {
     data: BodyShipData[]

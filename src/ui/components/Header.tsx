@@ -1,6 +1,6 @@
 import React from "react";
 import {Button} from "../index";
-import {getUser, logout} from "../../api/someVariables";
+import {getUser, logout} from "../../api";
 
 export const Header = () => {
 

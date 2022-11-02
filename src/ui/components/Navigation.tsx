@@ -1,6 +1,6 @@
 import React from "react";
 import {MenuList} from "../../types/types";
-import {MenuItem} from "./MenuItem";
+import {MenuItem} from "../index";
 
 interface Props {
     data: Data[]

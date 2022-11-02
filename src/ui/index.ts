@@ -12,6 +12,18 @@ import {ImgItem} from "./components/ImgItem";
 import {Row} from "./base/Row";
 import {Button} from "./base/Button";
 import {Input} from "./base/Input";
+import {InfoWrapper} from "./components/InfoWrapper";
+import {Ships} from "./components/Ships";
+import {Missions} from "./components/Missions";
+import {Rockets} from "./components/Rockets";
+import {StartFrame} from "./components/StartFrame";
+import {MenuItem} from "./components/MenuItem";
 
 
-export {Home , Body , Login ,Navigation ,Header , Layout, Title ,InfoItem , Link ,Row ,Col, ImgItem ,Button ,Input}
+export {Home, InfoWrapper , Body , Login ,Navigation ,Header , Layout, Title ,InfoItem , Link ,Row ,Col, ImgItem ,Button ,Input ,
+    Ships,
+    Missions,
+    Rockets,
+    StartFrame,
+    MenuItem
+}

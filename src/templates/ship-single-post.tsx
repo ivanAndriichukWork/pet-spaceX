@@ -1,6 +1,6 @@
 import * as React from "react";
 import {graphql} from "gatsby";
-import {Header ,Layout, Title, Link , InfoItem, ImgItem, Col ,Row} from "../ui";
+import {InfoWrapper, Title, Link, InfoItem, ImgItem, Col, Row} from "../ui";
 
 type Data = {
     data: {
@@ -34,16 +34,17 @@ const ShipSinglePost = ({data}: Data) => {
         missions,
     } = data.spacex.ship
     return (
-        <Layout>
-            <Header/>
+        <InfoWrapper>
             <Title size={'big'} isCenter={true}>{name}</Title>
             <Row>
                 <Col width={50}>
                     <InfoItem title={'Model'}>{model}</InfoItem>
                     <InfoItem title={'MMSI'}>{mmsi}</InfoItem>
                     <InfoItem title={'IMO'}>{imo}</InfoItem>
-                    <InfoItem title={'Missions'}><ul>{missions.map(({name, flight}) => <li>{name} /
-                        flight: {flight}</li>)}</ul></InfoItem>
+                    <InfoItem title={'Missions'}>
+                        <ul>{missions.map(({name, flight}) => <li>{name} /
+                            flight: {flight}</li>)}</ul>
+                    </InfoItem>
                 </Col>
                 <Col width={50}>
                     {image ?
@@ -54,8 +55,8 @@ const ShipSinglePost = ({data}: Data) => {
 
                 </Col>
             </Row>
-            <Link backType={true} />
-        </Layout>
+            <Link backType={true}/>
+        </InfoWrapper>
     )
 }
 

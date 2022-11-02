@@ -1,7 +1,4 @@
 import React, {ReactNode} from "react";
-import {Link as GatsbyLink} from "gatsby";
-import store from "../../redux/store";
-import auth from "../../api";
 
 interface LayoutProps {
     children?: ReactNode,

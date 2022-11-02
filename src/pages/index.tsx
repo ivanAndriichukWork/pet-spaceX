@@ -1,9 +1,8 @@
-import * as React from "react"
+import React , {useState} from "react"
 import {graphql, PageProps} from "gatsby"
 import {Data} from "../types/types";
 import {Home , Login ,Layout} from "../ui";
 import store from "../redux/store";
-import {useState} from "react";
 import {isBrowser, isLoggedIn} from "../api";
 
 

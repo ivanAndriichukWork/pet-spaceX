@@ -1,9 +1,11 @@
 import React from "react";
-import {BodyData, BodyMissionData, BodyRocketData, BodyShipData} from '../../types/types'
-import {Rockets} from "./Rockets";
-import {StartFrame} from "./StartFrame";
-import {Missions} from "./Missions";
-import {Ships} from "./Ships";
+import {BodyMissionData, BodyRocketData, BodyShipData} from '../../types/types'
+import {
+    Ships,
+    Missions,
+    Rockets,
+    StartFrame
+} from "../index";
 
 interface LayoutProps {
     currentGroup: string
