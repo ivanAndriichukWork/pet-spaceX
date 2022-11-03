@@ -18,7 +18,7 @@ export const Input = ({inputType, placeholder, onChange, ...props}: LayoutProps)
             id={placeholder}
             className={classes}
             type={inputType}
-            placeholder={placeholder}
+            placeholder={isActive ? '' : placeholder}
             onChange={onChange}
             {...props}
             onFocus={()=>setIsActive(true)}
