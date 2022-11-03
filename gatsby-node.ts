@@ -43,14 +43,14 @@ export const createPages: GatsbyNode["createPages"] = async ({
         })
     })
 
-    ships.forEach((ship)=>{
-        const {id} = ship;
-        actions.createPage({
-            path: `/ships/${id}`,
-            component: path.resolve('src/templates/ship-single-post.tsx'),
-            context: { id }
-        })
-    })
+    // ships.forEach((ship)=>{
+    //     const {id} = ship;
+    //     actions.createPage({
+    //         path: `/ships/${id}`,
+    //         component: path.resolve('src/templates/ship-single-post.tsx'),
+    //         context: { id }
+    //     })
+    // })
 
 }
 
