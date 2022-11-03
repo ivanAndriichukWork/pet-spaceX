@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import auth from '../../api'
 import store from "../../redux/store";
-import {Title ,Input ,Button} from "../index";
+import {Title, Input, Button} from "../index";
 
 // markup
 export const Login = () => {
@@ -13,15 +13,15 @@ export const Login = () => {
     store.subscribe(() => store.getState())
 
     return (
-        <main >
+        <main>
             <form className='flex flex-col mt-40 mx-auto max-w-min'>
-                <Title isCenter={true} size={'mid'}>{isSignUp?'Login': 'Registration'}</Title>
+                <Title isCenter={true} size={'mid'}>{isSignUp ? 'Login' : 'Registration'}</Title>
 
-                {!isSignUp?
-                <Input
-                    inputType={'text'}
-                    placeholder={'Username'}
-                    onChange={({target}) => setName(target.value.toString())}/> : null}
+                {!isSignUp ?
+                    <Input
+                        inputType={'text'}
+                        placeholder={'Username'}
+                        onChange={({target}) => setName(target.value.toString())}/> : null}
                 <Input
                     inputType={'email'}
                     placeholder={'Email'}
@@ -42,12 +42,17 @@ export const Login = () => {
                                 })
                         } else auth.auth.registration({username, name, password})
                             .catch((error) => {
-                            setError(error)
-                        })
+                                setError(error)
+                            })
                     }}
                 >Sign {isSignUp ? 'in' : 'up'}</Button>
 
-                {error ? <p className='text-red-500'>Email or Password not valid</p> : <></>}
+                {error ?
+                    isSignUp ?
+                        <p className='text text-center text-red-500'>Email or Password not valid</p> :
+                        <p className='text text-center text-red-500'>Email or Password not
+                            valid <br/> password must contain 1 number and 1 capital letter</p> :
+                    <></>}
 
 
                 <p
