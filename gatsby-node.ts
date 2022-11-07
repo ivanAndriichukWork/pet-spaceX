@@ -19,38 +19,49 @@ export const createPages: GatsbyNode["createPages"] = async ({
           id
         }
         ships {
+          missions {
+            name
+            flight
+          }
           id
+          image
+          name
+          model
+          mmsi
+          imo
         }
       }
     }`)
-    const { rockets , missions , ships } = data?.spacex!
+    const {rockets, missions, ships} = data?.spacex!
 
-    rockets.forEach((rocket)=>{
+    rockets.forEach((rocket) => {
         const {id} = rocket;
-        actions.createPage({
+        createPage({
             path: `/rockets/${id}`,
             component: path.resolve('src/templates/rocket-single-post.tsx'),
-            context: { id }
+            context: {id}
         })
     })
 
-    missions.forEach((mission)=>{
+    missions.forEach((mission) => {
         const {id} = mission;
-        actions.createPage({
+        createPage({
             path: `/missions/${id}`,
             component: path.resolve('src/templates/mission-single-post.tsx'),
-            context: { id }
+            context: {id}
         })
     })
 
-    // ships.forEach((ship)=>{
-    //     const {id} = ship;
-    //     actions.createPage({
-    //         path: `/ships/${id}`,
-    //         component: path.resolve('src/templates/ship-single-post.tsx'),
-    //         context: { id }
-    //     })
-    // })
+    ships.forEach((ship, index) => {
+        const {id} = ship;
+        createPage({
+            path: `/ships/${id}`,
+            component: path.resolve('src/templates/ship-single-post.tsx'),
+            context: {
+                ship: ship
+            }
+        })
+    })
 
 }
 

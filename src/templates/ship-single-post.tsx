@@ -1,5 +1,5 @@
 import * as React from "react";
-import {graphql} from "gatsby";
+// import {graphql} from "gatsby";
 import {InfoWrapper, Title, Link, InfoItem, ImgItem, Col, Row} from "../ui";
 
 type Data = {
@@ -23,8 +23,8 @@ type Mission = {
     flight: string,
 }
 
-const ShipSinglePost = ({data}: Data) => {
-    console.log(data)
+const ShipSinglePost = ({pageContext}: Data) => {
+    console.log(pageContext)
     const {
         image,
         name,
@@ -32,7 +32,7 @@ const ShipSinglePost = ({data}: Data) => {
         mmsi,
         imo,
         missions,
-    } = data.spacex.ship
+    } = pageContext.ship
     return (
         <InfoWrapper>
             <Title size={'big'} isCenter={true}>{name}</Title>
@@ -62,21 +62,21 @@ const ShipSinglePost = ({data}: Data) => {
 
 export default ShipSinglePost
 
-export const ship = graphql`
-query ShipQuery($id: ID!) {
-  spacex {
-    ship(id: $id) {
-      missions {
-        name
-        flight
-      }
-      id
-      image
-      name
-      model
-      mmsi
-      imo
-    }
-  }
-}
-`
+// export const ship = graphql`
+// query ShipQuery($id: ID!) {
+//   spacex {
+//     ship(id: $id) {
+//       missions {
+//         name
+//         flight
+//       }
+//       id
+//       image
+//       name
+//       model
+//       mmsi
+//       imo
+//     }
+//   }
+// }
+// `
