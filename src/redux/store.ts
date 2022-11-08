@@ -1,23 +1,17 @@
 import {createStore, Store} from "redux"
-import {isBrowser, isLoggedIn} from "../api/someVariables";
+import {isBrowser, isLoggedIn} from "../api";
 
-
-//actions
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
 export const NEW_ITEM = 'NEW_ITEM'
 
 interface InitialState {
     logged: boolean,
-    // user: {},
-    // jwt: string
     item: string
 }
 
 const initialState:InitialState = {
     logged: isBrowser() && isLoggedIn(),
-    // user: {},
-    // jwt: '',
     item: ''
 }
 
@@ -31,14 +25,10 @@ const reducer = function (state:InitialState|any , action:any) {
         case LOGIN: return {
             ...state,
             logged: true,
-            // user: action.user,
-            // jwt: action.jwt
         }
         case LOGOUT: return {
             ...state,
             logged: false,
-        //     user: {},
-        //     jwt: ''
         }
         case NEW_ITEM: return {
             item: action.item,

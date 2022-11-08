@@ -1,5 +1,4 @@
 import * as React from "react";
-// import {graphql} from "gatsby";
 import {InfoWrapper, Title, Link, InfoItem, ImgItem, Col, Row} from "../ui";
 
 type Data = {
@@ -61,22 +60,3 @@ const ShipSinglePost = ({pageContext}: Data) => {
 }
 
 export default ShipSinglePost
-
-// export const ship = graphql`
-// query ShipQuery($id: ID!) {
-//   spacex {
-//     ship(id: $id) {
-//       missions {
-//         name
-//         flight
-//       }
-//       id
-//       image
-//       name
-//       model
-//       mmsi
-//       imo
-//     }
-//   }
-// }
-// `

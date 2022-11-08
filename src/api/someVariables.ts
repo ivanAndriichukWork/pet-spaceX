@@ -21,12 +21,6 @@ type User = {
     email: string,
 }
 
-// type LoginUser = {
-//     username: string,
-//     password: string,
-//
-// }
-
 const setUser = (user: User) =>
     window.localStorage.setItem("gatsbyUser", JSON.stringify(user))
 

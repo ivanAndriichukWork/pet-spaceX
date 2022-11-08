@@ -8,7 +8,6 @@ interface NavData {
     values: MenuList[]
 }
 
-// markup
 export const Home = (props: any) => {
     const [currentItem, setCurrentItem] = useState<string>(''),
         [currentGroup, setCurrentGroup] = useState<string>('')

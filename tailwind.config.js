@@ -5,9 +5,6 @@ module.exports = {
     "./src/ui/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    // fontFamily: {
-    //   sans: 'D-DIN'
-    // },
     extend: {},
   },
   plugins: [],

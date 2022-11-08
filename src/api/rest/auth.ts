@@ -20,10 +20,7 @@ export const login = (data:MyAuth) => {
         setToken(resp.data.jwt)
         store.dispatch({
             type: LOGIN,
-            // jwt : resp.data.jwt,
             logged : true,
-            // user : resp.data.user
-
         })
         handleLogin(resp.data.user)
     })
@@ -42,9 +39,7 @@ export const registration = (data:MyAuth) => {
         setToken(resp.data.jwt)
         store.dispatch({
             type: LOGIN,
-            // jwt : resp.data.jwt,
             logged : true,
-            // user : resp.data.user
         })
         handleLogin(resp.data.user)
     })

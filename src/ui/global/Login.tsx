@@ -3,7 +3,6 @@ import auth from '../../api'
 import store from "../../redux/store";
 import {Title, Input, Button} from "../index";
 
-// markup
 export const Login = () => {
     const [username, setUsername] = useState('')
     const [name, setName] = useState('')
