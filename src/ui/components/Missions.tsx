@@ -13,32 +13,42 @@ export const Missions = ({data}: LayoutProps) => {
         payloadsMin: number = isData ? data[0]!.payload_mass_min! : 0,
         payloadsTotal: number = isData ? data[0]!.payload_mass_total! : 0;
 
+
+    console.log(data)
+
     return <main className={`bg-[#000200] w-full h-full`}>
-        <Row className={`justify-between h-max`}>
-            <Col
-                className={`relative flex text-center flex-col items-center justify-center mx-6 my-10 w-[46%] rounded-3xl bg-[#DAE7FF] h-[340px]`}>
-                <p className={`font-bold mb-[40px] text-[#2E85E5] leading-none text-[100px]`}><b>{payloadsLength}</b>
-                </p>
-                <p className={`font-bold text-[25px]`}>Number of flights</p>
-            </Col>
-            <Col
-                className={`relative flex text-center flex-col items-center justify-center mx-6 my-10 w-[46%] rounded-3xl bg-[#DAE7FF] h-[340px]`}>
-                <p className={`font-bold mb-[40px] text-[#2E85E5] leading-none text-[100px]`}><b>{payloadsMin}kg</b></p>
-                <p className={`font-bold text-[25px]`}>Minimum weight per trip</p>
-            </Col>
-        </Row>
-        <Row className={`justify-between h-max`}>
-            <Col
-                className={`relative flex text-center flex-col items-center justify-center mx-6 my-10 w-[46%] rounded-3xl bg-[#DAE7FF] h-[340px]`}>
-                <p className={`font-bold mb-[40px] text-[#2E85E5] leading-none text-[100px]`}><b>{payloadsTotal}kg</b>
-                </p>
-                <p className={`font-bold text-[25px]`}>Total weight of the shipped cargo</p>
-            </Col>
-            <Col
-                className={`relative flex text-center flex-col items-center justify-center mx-6 my-10 w-[46%] rounded-3xl bg-[#DAE7FF] h-[340px]`}>
-                <p className={`font-bold mb-[40px] text-[#2E85E5] leading-none text-[100px]`}><b>{payloadsMax}kg</b></p>
-                <p className={`font-bold text-[25px]`}>Maximum weight per trip</p>
-            </Col>
-        </Row>
+        <div>
+            <Row className={`justify-between h-max`}>
+                <Col
+                    className={`relative flex text-center flex-col items-center justify-center mx-6 my-10 w-[46%] rounded-3xl bg-[#DAE7FF] h-[340px]`}>
+                    <p className={`font-bold mb-[40px] text-[#2E85E5] leading-none text-[100px]`}>
+                        <b>{payloadsLength}</b>
+                    </p>
+                    <p className={`font-bold text-[25px]`}>Number of flights</p>
+                </Col>
+                <Col
+                    className={`relative flex text-center flex-col items-center justify-center mx-6 my-10 w-[46%] rounded-3xl bg-[#DAE7FF] h-[340px]`}>
+                    <p className={`font-bold mb-[40px] text-[#2E85E5] leading-none text-[100px]`}><b>{payloadsMin}kg</b>
+                    </p>
+                    <p className={`font-bold text-[25px]`}>Minimum weight per trip</p>
+                </Col>
+            </Row>
+            <Row className={`justify-between h-max`}>
+                <Col
+                    className={`relative flex text-center flex-col items-center justify-center mx-6 my-10 w-[46%] rounded-3xl bg-[#DAE7FF] h-[340px]`}>
+                    <p className={`font-bold mb-[40px] text-[#2E85E5] leading-none text-[100px]`}>
+                        <b>{payloadsTotal}kg</b>
+                    </p>
+                    <p className={`font-bold text-[25px]`}>Total weight of the shipped cargo</p>
+                </Col>
+                <Col
+                    className={`relative flex text-center flex-col items-center justify-center mx-6 my-10 w-[46%] rounded-3xl bg-[#DAE7FF] h-[340px]`}>
+                    <p className={`font-bold mb-[40px] text-[#2E85E5] leading-none text-[100px]`}><b>{payloadsMax}kg</b>
+                    </p>
+                    <p className={`font-bold text-[25px]`}>Maximum weight per trip</p>
+                </Col>
+            </Row>
+        </div>
+
     </main>
 }

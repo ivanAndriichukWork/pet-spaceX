@@ -15,7 +15,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
         rockets {
             id
         }
-        missions {
+        launches {
           id
         }
         ships {
@@ -32,7 +32,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
         }
       }
     }`)
-    const {rockets, missions, ships} = data?.spacex!
+    const {rockets, launches, ships} = data?.spacex!
 
     rockets.forEach((rocket) => {
         const {id} = rocket;
@@ -43,10 +43,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
         })
     })
 
-    missions.forEach((mission) => {
-        const {id} = mission;
+    launches.forEach((launches) => {
+        const {id} = launches;
         createPage({
-            path: `/missions/${id}`,
+            path: `/launches/${id}`,
             component: path.resolve('src/templates/mission-single-post.tsx'),
             context: {id}
         })

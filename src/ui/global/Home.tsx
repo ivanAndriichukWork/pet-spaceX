@@ -32,24 +32,24 @@ export const Home = (props: any) => {
                     mass: item!.mass?.kg!,
                 } as BodyRocketData)
             }
-            if (key === 'missions') {
+            if (key === 'launches') {
                 let mass_max: number = 0,
                     mass_min: number = 1000000,
                     mass_total: number = 0;
-                item!.payloads?.forEach((payload) => {
-                    if (payload?.payload_mass_kg! > mass_max) {
-                        mass_max = payload?.payload_mass_kg!
+                item!.rocket.rocket.payload_weights?.forEach((payload) => {
+                    if (payload?.kg! > mass_max) {
+                        mass_max = payload?.kg!
                     }
-                    if (payload?.payload_mass_kg! != null && payload?.payload_mass_kg! < mass_min) {
-                        mass_min = payload?.payload_mass_kg!
+                    if (payload?.kg! != null && payload?.kg! < mass_min) {
+                        mass_min = payload?.kg!
                     }
-                    mass_total += payload?.payload_mass_kg! != null ? payload?.payload_mass_kg! : 0
+                    mass_total += payload?.kg! != null ? payload?.kg! : 0
                 })
                 missionData.push({
                     path: key,
                     id: item!.id,
-                    name: item!.name!,
-                    payloads_length: item!.payloads?.length,
+                    name: item!.mission_name!,
+                    payloads_length: item!.rocket?.rocket?.payload_weights?.length,
                     payload_mass_max: mass_max!,
                     payload_mass_min: mass_min!,
                     payload_mass_total: mass_total!,

@@ -40,10 +40,10 @@ const ShipSinglePost = ({pageContext}: Data) => {
                     <InfoItem title={'Model'}>{model}</InfoItem>
                     <InfoItem title={'MMSI'}>{mmsi}</InfoItem>
                     <InfoItem title={'IMO'}>{imo}</InfoItem>
-                    <InfoItem title={'Missions'}>
+                    {missions ? <InfoItem title={'Missions'}>
                         <ul>{missions.map(({name, flight}) => <li>{name} /
                             flight: {flight}</li>)}</ul>
-                    </InfoItem>
+                    </InfoItem> : ''}
                 </Col>
                 <Col width={50}>
                     {image ?

@@ -25,7 +25,7 @@ export const Body = ({
 
         {currentGroup === '' ? <StartFrame/> : null}
         {currentGroup === 'rockets' ? <Rockets data={rocketData}/> : null}
-        {currentGroup === 'missions' ? <Missions data={missionData}/> : null}
+        {currentGroup === 'launches' ? <Missions data={missionData}/> : null}
         {currentGroup === 'ships' ? <Ships data={shipData}/> : null}
 
     </main>

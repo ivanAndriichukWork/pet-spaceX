@@ -37,12 +37,16 @@ query getData {
         meters
       }
     }
-    missions {
+    launches {
+      mission_name
       id
-      name
-      payloads {
-        payload_mass_kg
-        payload_mass_lbs
+      rocket {
+        rocket {
+          payload_weights {
+            kg
+            lb
+          }
+        }
       }
     }
     ships {

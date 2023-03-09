@@ -6,7 +6,7 @@ node v19.0.0
 
 `-for production, change the name of the .env.example file to .env.production and and add your variables`
 
-we use https://api.spacex.land/graphql for GATSBY_SPACEX_GRAPHQL
+we use https://main--spacex-l4uc6p.apollographos.net/graphql for GATSBY_SPACEX_GRAPHQL
 
 1. npm install
 2. npm start

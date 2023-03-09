@@ -5,13 +5,16 @@ import { Title, Link, InfoItem, InfoWrapper} from "../ui";
 type Data = {
     data: {
         spacex: {
-            mission: {
-                description: string,
-                manufacturers: string[],
-                name: string,
-                twitter: string,
-                website: string,
-                wikipedia: string,
+            launch: {
+                details: string,
+                mission_name: string,
+                id: string,
+                links: {
+                    wikipedia: string,
+                }
+                launch_site: {
+                    site_name: string,
+                }
             }
         }
     }
@@ -19,23 +22,18 @@ type Data = {
 
 const MissionSinglePost = ({data}: Data) => {
     const {
-        description,
-        manufacturers,
-        name,
-        twitter,
-        website,
-        wikipedia,
-    } = data.spacex.mission
+        details,
+        mission_name,
+        launch_site,
+        links,
+    } = data.spacex.launch
     return (
         <InfoWrapper>
-            <Title size={'big'} isCenter={true}>{name}</Title>
-            <InfoItem title={'Description'}> {description}</InfoItem>
-            <InfoItem
-                title={'Manufacturers'}> {manufacturers.length > 1 ? manufacturers.map((man: string) => `${man}; `) : manufacturers}</InfoItem>
+            <Title size={'big'} isCenter={true}>{mission_name}</Title>
+            <InfoItem title={'Description'}> {details}</InfoItem>
             <InfoItem title={'Links'}>
-                {wikipedia ? <><Link href={wikipedia}>Wikipedia</Link>,</> : ''}
-                {twitter ? <><Link href={twitter}>Twitter</Link>,</> : ''}
-                {website ? <><Link href={website}>Web Site</Link></> : ''}
+                {links && links.wikipedia ? <><Link href={links.wikipedia}>Wikipedia</Link>,</> : ''}
+                {launch_site && launch_site.site_name ? <><Link href={launch_site.site_name}>Web Site</Link></> : ''}
             </InfoItem>
             <Link backType={true}/>
         </InfoWrapper>
@@ -48,13 +46,16 @@ export default MissionSinglePost
 export const mission = graphql`
 query MissionQuery($id: ID!) {
   spacex {
-    mission(id: $id) {
-      description
-      manufacturers
-      name
-      twitter
-      website
-      wikipedia
+    launch(id: $id) {
+      mission_name
+      details
+      links {
+        wikipedia
+      }
+      id
+      launch_site {
+        site_name
+      }
     }
   }
 }

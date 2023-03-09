@@ -151,6 +151,8 @@ export interface MenuList {
     mass: {
         kg: number
     }
+    mission_name: string;
+    rocket : any;
     payloads: Payloads[] | null
     image : string
     year_built: number

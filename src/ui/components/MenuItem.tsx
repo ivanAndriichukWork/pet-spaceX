@@ -46,7 +46,7 @@ export const MenuItem = ({title, values}: Data) => {
         </div>
         {isActive ?
             <ul>{values.map((item: MenuList) => {
-                const {name, id} = item
+                const {name, id , mission_name} = item
                 return (<li key={id}
                             onMouseOver={() => {
                                 setCurrentItem(id)
@@ -55,7 +55,7 @@ export const MenuItem = ({title, values}: Data) => {
                     <Link
                         className='pl-[60px] text-[14px] rounded-md py-3 block text-white hover:text-[#2E85E5]'
                         to={`/${title}/${id}`} key={id}>
-                        {name}
+                        {name ? name : mission_name}
                     </Link>
                 </li>)
             })}</ul>

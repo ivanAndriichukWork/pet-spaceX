@@ -39,6 +39,15 @@ const config: GatsbyConfig = {
         url: process.env.GATSBY_SPACEX_GRAPHQL,
       },
     },
+    // {
+    //   resolve: "gatsby-source-rest-api",
+    //   options: {
+    //     endpoints: [
+    //       'https://api.spacexdata.com/v5/payloads/query',
+    //       'https://api.spacexdata.com/v5/payloads/query',
+    //     ]
+    //   },
+    // },
   ]
 };
 
