@@ -1,4 +1,4 @@
-node v19.0.0
+node v20.8.0
 
 `Environment variables must be added to the project: `
 
