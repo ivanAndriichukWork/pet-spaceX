@@ -2,7 +2,7 @@ import React, {ReactNode} from "react";
 
 interface LayoutProps {
     children:ReactNode,
-    size?: 'big'| 'mid' |'menu' | null,
+    size?: 'big'| 'mid' |'menu' | 'small' | 'big-white' |null,
     isCenter?: boolean,
     onClick?: React.MouseEventHandler<HTMLHeadingElement> | undefined,
     className?: string
@@ -24,6 +24,14 @@ export const Title = ({isCenter, size, children , className , onClick}:LayoutPro
         case 'mid' : {
             classes += ' text-[22px]'
             return  <h2 className={classes}>{children}</h2>
+        }
+        case 'small' : {
+            classes += ' text-[13px] text-gray-500'
+            return <h3 className={classes}>{children}</h3>
+        }
+        case 'big-white': {
+            classes += ' text-[34px] text-white'
+            return <h3 className={classes}>{children}</h3>
         }
         default : {
             classes += ' text-[17px]'

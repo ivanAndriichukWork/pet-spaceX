@@ -1,6 +1,6 @@
 import React from "react";
 import {BodyMissionData} from '../../types/types'
-import {Row, Col} from "../index";
+import {Row, Col, Title} from "../index";
 
 interface LayoutProps {
     data: BodyMissionData[]
@@ -11,13 +11,13 @@ export const Missions = ({data}: LayoutProps) => {
         payloadsLength: number = isData ? data[0]!.payloads_length! : 0,
         payloadsMax: number = isData ? data[0]!.payload_mass_max! : 0,
         payloadsMin: number = isData ? data[0]!.payload_mass_min! : 0,
-        payloadsTotal: number = isData ? data[0]!.payload_mass_total! : 0;
+        payloadsTotal: number = isData ? data[0]!.payload_mass_total! : 0,
+        payloadsName: string = isData ? data[0]!.name! : '';
 
 
-    console.log(data)
-
-    return <main className={`bg-[#000200] w-full h-full`}>
-        <div>
+    return <main className={`bg-[#000200] relative w-full h-full`}>
+        <div className="sticky top-[30px]">
+            <Title size={'big-white'} isCenter={true}>{!!payloadsName ? `Launch: ${payloadsName}`: ` `}</Title>
             <Row className={`justify-between h-max`}>
                 <Col
                     className={`relative flex text-center flex-col items-center justify-center mx-6 my-10 w-[46%] rounded-3xl bg-[#DAE7FF] h-[340px]`}>

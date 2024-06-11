@@ -7,7 +7,7 @@ interface LayoutProps {
 
 export const InfoItem = ({children, title}:LayoutProps) => {
     return <div className='mx-20 mb-3 text-[#fff]'>
-        <b>{title}</b>:
-        {children}
+        <b>{title}</b>:&nbsp; 
+         {!!children ? children : 'N/A'}
     </div>
 }

@@ -8,14 +8,15 @@ export const Login = () => {
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState()
-    const [isSignUp, setIsSignUp] = useState(false)
+    const [isSignUp, setIsSignUp] = useState(true)
     store.subscribe(() => store.getState())
 
     return (
         <main>
+            {!!process.env.GATSBY_USER_LOGIN && !!process.env.GATSBY_USER_PASSWORD ? <Title isCenter={true} size={'small'}>Please use {process.env.GATSBY_USER_LOGIN}/{process.env.GATSBY_USER_PASSWORD} to enter</Title> : ''}
             <form className='flex flex-col mt-40 mx-auto max-w-min'>
+                
                 <Title isCenter={true} size={'mid'}>{isSignUp ? 'Login' : 'Registration'}</Title>
-
                 {!isSignUp ?
                     <Input
                         inputType={'text'}
