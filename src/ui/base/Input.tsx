@@ -23,7 +23,6 @@ export const Input = ({inputType, placeholder, onChange, ...props}: LayoutProps)
             {...props}
             onFocus={()=>setIsActive(true)}
             onBlur={(event)=> {
-                console.log(event.target.value)
                 if (event.target.value.length === 0) {
                     setIsActive(false)
                 }

@@ -23,7 +23,6 @@ type Mission = {
 }
 
 const ShipSinglePost = ({pageContext}: Data) => {
-    console.log(pageContext)
     const {
         image,
         name,
@@ -46,12 +45,7 @@ const ShipSinglePost = ({pageContext}: Data) => {
                     </InfoItem> : ''}
                 </Col>
                 <Col width={50}>
-                    {image ?
-                        <ImgItem src={image} alt={name}/>
-                        :
-                        <p>W/O images</p>
-                    }
-
+                    {<ImgItem src={image} alt={name}/>}
                 </Col>
             </Row>
             <Link backType={true}/>

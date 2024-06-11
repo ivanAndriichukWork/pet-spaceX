@@ -1,7 +1,7 @@
 import React from "react";
 import {BodyShipData} from '../../types/types'
 import {Row} from "../index";
-
+import { ImgItem } from "../index";
 
 interface LayoutProps {
     data: BodyShipData[]
@@ -22,10 +22,10 @@ export const Ships = ({data}: LayoutProps) => {
 
     return <main className={`bg-[#000200] relative w-full h-full`}>
         <Row className={'sticky top-[30px]'}>
-            <div className={'mx-auto'}>
+            <div className={'mx-auto w-[800px] h-[600px]'}>
                 <div
                     className={`group max-w-[800px] max-h-[600px] object-cover rounded-3xl overflow-hidden my-10  flex bg-[#DAE7FF] flex-wrap w-max`}>
-                    <img src={image} alt=''/>
+                    <ImgItem src={image} alt=''/>
                 </div>
 
             </div>

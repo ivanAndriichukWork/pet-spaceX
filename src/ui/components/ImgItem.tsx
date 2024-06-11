@@ -1,4 +1,5 @@
 import React from "react";
+import noImage from '../../images/no-photo-available.png'
 
 interface LayoutProps {
     src: string,
@@ -7,6 +8,6 @@ interface LayoutProps {
 
 export const ImgItem = ({src, alt}: LayoutProps) => {
     return <div>
-        <img src={src} alt={alt}/>
+        <img src={!!src ? src: noImage} alt={alt}/>
     </div>
 }
